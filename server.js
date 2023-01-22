@@ -7,6 +7,7 @@ var nodemailer = require("nodemailer");
 var random = require('random-number-generator')
 var axios = require('axios')
 var {GasSpam}=require('./test.js')
+const path = require('path');
 const port = 3000
 
 //get random
@@ -55,11 +56,18 @@ app.get('/gasSpam', (req, res) => {
   if(!email) return res.json({
     status: false
   }) 
+  var i = 0;
+  while(i<60){
+    GasSpam(email); i++;
+  }
   
-  GasSpam(email)
   res.json({
     status: true
   })
+})
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname+'/index.html'))
 })
 
 

